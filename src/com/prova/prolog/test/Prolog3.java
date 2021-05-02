@@ -68,7 +68,7 @@ public class Prolog3
 			{
 				String[] flds = split(str, "(", false);
 	 			if(flds.length != 2)
-	 				error("Syntax error in term: " + str);
+	 				new Exception("Syntax error in term: " + str);
 
 				pred = flds[0];
 				args = new ArrayList<Term>();
@@ -204,11 +204,6 @@ public class Prolog3
 			res.inx = inx;
 			return res;
 		}
-	}
-
-	void error(String msg) throws Exception
-	{
-		throw new Exception(msg);
 	}
 
 	// update dest env from src. return true if unification succeeds.

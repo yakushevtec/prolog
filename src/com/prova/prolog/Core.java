@@ -274,9 +274,4 @@ public class Core
 		}
 		return res;
 	}
-
-	static void error(String msg) throws Exception
-	{
-		throw new Exception(msg);
-	}
 }

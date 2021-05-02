@@ -19,10 +19,10 @@ public class Prolog1
 		{
 			str = str.trim();
 			if(str.charAt(str.length()-1) != ')')
-				error("Syntax error in term: " + str);
+				new Exception("Syntax error in term: " + str);
 			String[] flds = str.split("\\(");
  			if(flds.length != 2)
- 				error("Syntax error in term: " + str);
+ 				new Exception("Syntax error in term: " + str);
 			pred = flds[0];
 			flds[1] = flds[1].substring(0, flds[1].length()-1);
  			args = flds[1].split(",");
@@ -124,11 +124,6 @@ public class Prolog1
 			res.inx = inx;
 			return res;
 		}
-	}
-
-	void error(String msg) throws Exception
-	{
-		throw new Exception(msg);
 	}
 
 	// update dest env from src. return true if unification succeeds.

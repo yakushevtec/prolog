@@ -57,7 +57,7 @@ public class Prolog2
 			{
 				String[] flds = split(str, '(', false);
 	 			if(flds.length != 2)
-	 				error("Syntax error in term: " + str);
+	 				new Exception("Syntax error in term: " + str);
 
 				args = new ArrayList<Term>();
 				for(String s:split(flds[1].substring(0, flds[1].length()-1), ',', true))
@@ -192,11 +192,6 @@ public class Prolog2
 			res.inx = inx;
 			return res;
 		}
-	}
-
-	void error(String msg) throws Exception
-	{
-		throw new Exception(msg);
 	}
 
 	// update dest env from src. return true if unification succeeds.

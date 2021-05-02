@@ -58,7 +58,7 @@ public class Term
 		{
 			String[] flds = Core.split(str, "(", false);
  			if(flds.length != 2)
- 				Core.error("Syntax error in term: " + str);
+ 				new Exception("Syntax error in term: " + str);
 
 			pred = flds[0];
 			args = new ArrayList<Term>();
